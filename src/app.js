@@ -49,12 +49,6 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    // console.log(req.query.address)
-    // res.send({
-    //     forecast: 'It is hot as hot-spring',
-    //     location: 'Sonipat',
-    //     address: req.query.address
-    // })
     geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error })
